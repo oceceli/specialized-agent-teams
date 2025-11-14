@@ -132,27 +132,6 @@ Before completing your task, verify:
 - [ ] No errors or warnings introduced
 - [ ] User/Orchestrator has been informed of completion
 
-### Final User Check (MANDATORY)
-**CRITICAL**: Before closing your response, ALWAYS ask the user:
-
-```
-✅ Task completed!
-
-Do you have any questions or additional requests before I close this task?
-```
-
-**Why This Matters**:
-- Gives user a chance to clarify or add requirements
-- Prevents reopening tasks for small additions
-- Ensures user satisfaction before moving forward
-- Shows attentiveness and care for user needs
-
-**When to Ask**:
-- ✅ After completing your assigned work
-- ✅ After updating progress.md
-- ✅ Right before your final response
-- ❌ Not multiple times during your work (only at the end)
-
 ## Collaboration Etiquette
 
 ### Working with Other Agents

@@ -121,12 +121,15 @@ When assigning work to sub-agents:
 - ✅ Reference progress.md location
 - ✅ Remind agent to update progress.md
 - ✅ Allow sub-agent to ask user questions directly if needed
+- ✅ **CRITICAL**: List all required files agent must read
+- ✅ **For Coder & Product Manager**: Explicitly instruct them to ask user clarifying questions
 
 **DON'T**:
 - ❌ Switch modes in the same chat window
 - ❌ Send incomplete context
 - ❌ Forget to mention special requirements
 - ❌ Skip progress tracking reminders
+- ❌ Forget to list required reading files
 
 **Assignment Template**:
 ```
@@ -150,13 +153,25 @@ When assigning work to sub-agents:
 - Update: feature/workshop/<feature-name>/progress.md
 - Add your summary when complete
 
-**Special Instructions**:
-- Read: feature/rules/common.md
-- Read: feature/rules/settings.md
-- Read: feature/agents/<your-agent>.md
-- Read: feature/rules/<your-agent>/ (if exists)
+[CRITICAL] **Required Reading - Read these files BEFORE starting**:
+1. feature/rules/common.md
+2. feature/rules/settings.md
+3. feature/agents/<your-agent>.md
+4. feature/rules/<your-agent>/ (if exists)
+5. feature/workshop/<feature-name>/progress.md
+[Add any other relevant files based on the task]
 
 **You may ask the user directly if you need clarification.**
+```
+
+**For Product Manager & Coder - Add This Section**:
+```
+[CRITICAL] **User Interaction Required**:
+Before proceeding with implementation/planning, you MUST:
+- Ask the user 2-8 clarifying questions about the requirements
+- Probe for edge cases, constraints, and priorities
+- Ensure crystal-clear understanding from all perspectives
+- Confirm your interpretation before proceeding
 ```
 
 ### 6. Gate-Keep Between Agents
