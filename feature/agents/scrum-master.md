@@ -34,36 +34,22 @@
 - ✅ **Independent**: Minimal dependencies on other stories (when possible)
 - ✅ **Valuable**: Delivers something meaningful
 
-#### Story Template:
+#### Individual Story Format (used within story files):
 
 ```markdown
 ### Story [Number]: [Story Title]
-
-**Description**: [Clear explanation of what needs to be built and why]
-
-**User Value**: [How does this benefit the user?]
-
-**Acceptance Criteria**:
-- [ ] [Criterion 1 - specific and testable]
-- [ ] [Criterion 2 - specific and testable]
-- [ ] [Criterion 3 - specific and testable]
-
-**Technical Notes**:
-- [Implementation hint 1]
-- [Integration point 1]
-- [File to modify 1]
-
-**Tasks**:
-- [ ] [Task 1] - [ ] coded, [ ] tested
-- [ ] [Task 2] - [ ] coded, [ ] tested
-- [ ] [Task 3] - [ ] coded, [ ] tested
-
-**Dependencies**:
-- [Story dependency, if any]
-
-**Risks**:
-- [Risk 1, if any]
+- **Description:** [Clear explanation of what needs to be built and why]
+- **Acceptance Criteria:**
+  - [Criterion 1 - specific and testable]
+  - [Criterion 2 - specific and testable]
+  - [Criterion 3 - specific and testable]
+- **Tasks:**
+  - [ ] [Task 1] - [ ] coded, [ ] tested
+  - [ ] [Task 2] - [ ] coded, [ ] tested
+  - [ ] [Task 3] - [ ] coded, [ ] tested
 ```
+
+**Note**: Keep stories clean and focused. Optional fields like Dependencies, Risks, or Technical Notes can be added in the "Notes for Coder" section at the end of the file.
 
 ### 3. Break Down Stories into Tasks
 **Goal**: Create specific, actionable work items for Coder.
@@ -104,99 +90,55 @@
 ```markdown
 ---
 agent: Scrum Master
-step: [N]
-title: Epic [Number] Stories - [Epic Name]
+epic: Epic [Number] - [Epic Name]
 date: YYYY-MM-DD
 ---
 
-# Stories for Epic [Number]: [Epic Name]
+# Epic Summary
 
-## Epic Summary
-[Brief recap of epic goals from Product Manager's documentation]
+[Brief recap of epic goals from Product Manager's documentation - 2-3 sentences explaining what this epic achieves and why it matters]
 
-**Epic Goal**: [What this epic achieves]
-
-**Key Requirements**:
-- [Requirement 1]
-- [Requirement 2]
-- [Requirement 3]
-
----
-
-## Story Breakdown
+## Stories
 
 ### Story 1: [Story Title]
-
-**Description**: [What needs to be built]
-
-**User Value**: [Why this matters]
-
-**Acceptance Criteria**:
-- [ ] [Criterion 1]
-- [ ] [Criterion 2]
-- [ ] [Criterion 3]
-
-**Technical Notes**:
-- [Note 1]
-- [Note 2]
-
-**Tasks**:
-- [ ] [Task 1 description] - [ ] coded, [ ] tested
-- [ ] [Task 2 description] - [ ] coded, [ ] tested
-- [ ] [Task 3 description] - [ ] coded, [ ] tested
-- [ ] [Task 4 description] - [ ] coded, [ ] tested
-
-**Dependencies**: None (or list dependencies)
-
-**Estimated Complexity**: Low/Medium/High
-
----
+- **Description:** [What needs to be built and why]
+- **Acceptance Criteria:**
+  - [Criterion 1]
+  - [Criterion 2]
+  - [Criterion 3]
+- **Tasks:**
+  - [ ] [Task 1 description] - [ ] coded, [ ] tested
+  - [ ] [Task 2 description] - [ ] coded, [ ] tested
+  - [ ] [Task 3 description] - [ ] coded, [ ] tested
+  - [ ] [Task 4 description] - [ ] coded, [ ] tested
 
 ### Story 2: [Story Title]
-
-[Same structure as Story 1]
-
----
+- **Description:** [What needs to be built and why]
+- **Acceptance Criteria:**
+  - [Criterion 1]
+  - [Criterion 2]
+  - [Criterion 3]
+- **Tasks:**
+  - [ ] [Task 1 description] - [ ] coded, [ ] tested
+  - [ ] [Task 2 description] - [ ] coded, [ ] tested
+  - [ ] [Task 3 description] - [ ] coded, [ ] tested
 
 ### Story 3: [Story Title]
-
-[Same structure as Story 1]
-
----
-
-## Implementation Order
-
-**Recommended Sequence**:
-1. Story [N]: [Why first]
-2. Story [N]: [Why second]
-3. Story [N]: [Why third]
-
-**Parallel Work Opportunities**:
-- Story [N] and Story [N] can be worked on simultaneously
-
----
-
-## Testing Strategy
-
-**Unit Tests Required For**:
-- [Area 1]
-- [Area 2]
-
-**Integration Tests Required For**:
-- [Integration point 1]
-- [Integration point 2]
-
-**End-to-End Tests Required For**:
-- [User flow 1]
-- [User flow 2]
-
----
+- **Description:** [What needs to be built and why]
+- **Acceptance Criteria:**
+  - [Criterion 1]
+  - [Criterion 2]
+- **Tasks:**
+  - [ ] [Task 1 description] - [ ] coded, [ ] tested
+  - [ ] [Task 2 description] - [ ] coded, [ ] tested
 
 ## Notes for Coder
 
 [CRITICAL] [Critical things Coder MUST know]
 
 [WARNING] [Important considerations]
+
+[INFO] [Helpful context or suggestions]
 
 [INFO] [Helpful tips or context]
 
@@ -287,9 +229,14 @@ When activated by Feature Orchestrator:
 
 1. **Read Required Files**:
    - [ ] `feature/rules/common.md`
-   - [ ] `feature/rules/settings.md`
+   - [ ] `feature/rules/settings.md` ⚠️ **CRITICAL**: Pay attention to language settings!
    - [ ] `feature/agents/scrum-master.md` (this file)
    - [ ] `feature/rules/scrum-master/` (if any custom rules exist)
+
+2. **Check Language Settings**:
+   - [ ] Read `User-Agent Communication Language` from settings.md
+   - [ ] Documentation should follow the specified language
+   - [ ] Keep task descriptions clear in the appropriate language
 
 2. **Read Progress File**:
    - [ ] `feature/workshop/<feature-name>/progress.md`
@@ -342,10 +289,19 @@ When activated by Feature Orchestrator:
     - [ ] Validate scope and priorities
 
 11. **Update & Report**:
-    - [ ] Update `progress.md` with your status
-    - [ ] Add summary of stories created
+    - [ ] Update `progress.md` with CONCISE summary using this format:
+      ```markdown
+      ### Scrum Master (Scrummy)
+      [YYYY-MM-DD HH:MM] ✅ Complete - [Brief one-line summary]
+      ```
     - [ ] Report to Orchestrator with clear summary
     - [ ] Note any questions or concerns
+
+**Example progress.md entry**:
+```markdown
+### Scrum Master (Scrummy)
+[2025-11-14 11:20] ✅ Complete - Created 15 stories with 87 tasks for user authentication epic
+```
 
 ---
 

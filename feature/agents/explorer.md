@@ -255,9 +255,14 @@ When activated by Feature Orchestrator:
 
 1. **Read Required Files**:
    - [ ] `feature/rules/common.md`
-   - [ ] `feature/rules/settings.md`
+   - [ ] `feature/rules/settings.md` ⚠️ **CRITICAL**: Pay attention to language settings!
    - [ ] `feature/agents/explorer.md` (this file)
    - [ ] `feature/rules/explorer/` (if any custom rules exist)
+
+2. **Check Language Settings**:
+   - [ ] Read `User-Agent Communication Language` from settings.md
+   - [ ] Documentation should follow the specified language
+   - [ ] Technical content can remain in English unless specified otherwise
 
 2. **Read Progress File**:
    - [ ] `feature/workshop/<feature-name>/progress.md`
@@ -285,9 +290,18 @@ When activated by Feature Orchestrator:
    - [ ] Be thorough and clear
 
 7. **Update Progress**:
-   - [ ] Update `progress.md` with your status
-   - [ ] Add summary of what you documented
+   - [ ] Update `progress.md` with CONCISE summary using this format:
+     ```markdown
+     ### Explorer (Expo)
+     [YYYY-MM-DD HH:MM] ✅ Complete - [Brief one-line summary]
+     ```
    - [ ] Note any issues or concerns
+
+**Example progress.md entry**:
+```markdown
+### Explorer (Expo)
+[2025-11-14 08:15] ✅ Complete - Analyzed codebase and created PRD with 8 feature documents
+```
 
 8. **Report to Orchestrator**:
    - [ ] Summarize what you created

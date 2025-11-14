@@ -3,57 +3,31 @@
 ## Communication Settings
 
 ### Language Preferences
+**⚠️ CRITICAL: All agents MUST respect these language settings**
+
 - **User-Agent Communication Language**: English (can be changed to Turkish, Spanish, etc.)
+  - All direct communication with user MUST be in this language
+  - Questions, summaries, reports, and confirmations
+  - Progress updates and status messages
+  
 - **Code Comments Language**: English
+  - Keep code comments in English for international collaboration
+  - Can be changed if specified by user
+  
 - **Documentation Language**: English
+  - Epic files, story files, and technical documentation
+  - Can follow User-Agent Communication Language if specified
+  - Progress.md entries should follow User-Agent Communication Language
+
+**Important**: 
+- ✅ Agents should read this file at the start of EVERY task
+- ✅ Consistency is critical - don't mix languages
+- ✅ When in doubt, use the User-Agent Communication Language
+- ❌ Never ignore language settings
 
 ### Communication Style
 - **Formality Level**: Professional but friendly
 - **Verbosity**: Balanced (not too terse, not too verbose)
-- **Emoji Usage**: Minimal (only for status indicators)
-
-## Agent Behavior Settings
-
-### Confirmation Requirements
-- **Before Starting Major Tasks**: Yes (Orchestrator should confirm with user)
-- **Before Moving to Next Agent**: Yes (Orchestrator should provide summary and wait for approval)
-- **Before Code Changes**: No (Coder can proceed once task is assigned)
-- **Before Tests**: No (Tester can proceed once coding is complete)
-
-### Progress Tracking
-- **Update Frequency**: After each significant milestone
-- **Progress File Location**: `feature/workshop/<feature_name>/progress.md`
-- **Summary Format**: Concise with bullet points
-
-## File Organization Settings
-
-### Naming Conventions
-- **Files**: kebab-case (e.g., `user-auth-epic.md`)
-- **Directories**: kebab-case (e.g., `user-management/`)
-- **Variables in Code**: Follow project's existing conventions
-
-### Frontmatter Format
-All agents must use the following frontmatter in created files:
-```yaml
----
-agent: [Agent Name]
-step: [Step Number]
-title: [Document Title]
-date: [YYYY-MM-DD]
----
-```
-
-## Quality Standards
-
-### Code Quality
-- **Test Coverage Target**: Minimum 80%
-- **Code Review**: All code changes should be reviewed by Tester
-- **Documentation**: All public APIs must be documented
-
-### Security Standards
-- **Sensitive Data**: Never hardcode credentials
-- **Authentication**: Follow project's auth patterns
-- **Input Validation**: Always validate user inputs
 
 ## Agent Coordination
 

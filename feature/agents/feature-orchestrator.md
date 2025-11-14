@@ -68,6 +68,13 @@ When starting a NEW feature request:
 
 2. **Initialize progress.md** with template:
    ```markdown
+   ---
+   feature: [Feature Name]
+   status: In Progress
+   started: YYYY-MM-DD
+   updated: YYYY-MM-DD
+   ---
+   
    # [Feature Name] Progress
    
    ## Current Phase
@@ -76,11 +83,7 @@ When starting a NEW feature request:
    ## Agent Status
    | Agent | Status | Progress |
    |-------|--------|----------|
-   | Explorer (Expo) | ⏳ Pending | Not started |
-   | Product Manager (Puma) | ⏳ Pending | Not started |
-   | Scrum Master (Scrummy) | ⏳ Pending | Not started |
-   | Coder (Cody) | ⏳ Pending | Not started |
-   | Tester (Qua) | ⏳ Pending | Not started |
+   [Only include agents that will be active in this feature]
    
    **Status Icons**: ⏳ Pending | 🔄 In Progress | ✅ Complete | ⚠️ Blocked
    
@@ -96,9 +99,14 @@ When starting a NEW feature request:
    ## Agent Summaries
    
    ### Feature Orchestrator
-   #### [Date] [Time] - Feature Initialized
-   Created workspace structure and assigned initial tasks.
+   [YYYY-MM-DD HH:MM] ✅ Complete - Feature initialized and workspace created
    ```
+
+**Important**: 
+- ✅ Add frontmatter with feature metadata
+- ✅ Only list agents that will work on THIS feature
+- ✅ Use concise timestamp format [YYYY-MM-DD HH:MM]
+- ❌ Don't include all 6 agents if some won't be needed
 
 3. **Remind all agents** to update this progress.md
 
@@ -152,12 +160,12 @@ When assigning work to sub-agents:
 ```
 
 ### 6. Gate-Keep Between Agents
-After each agent completes their task:
+**CRITICAL**: After EVERY sub-agent completes their work, you MUST:
 
 1. **Receive** agent's summary
 2. **Review** their output quality
 3. **Update** progress.md status
-4. **Provide user** with concise summary:
+4. **Provide user** with concise summary in their preferred language:
    ```
    📋 [Agent Name] has completed: [Brief summary]
    
@@ -171,6 +179,17 @@ After each agent completes their task:
    ```
 5. **Wait for user approval** before assigning next agent
 6. **Proceed** only after user confirms
+
+**Gate-keeping Format**:
+```markdown
+✅ **[Agent Name] Complete**
+
+Completed: [Brief description]
+
+Next Task: [Next agent name] will [brief action description]
+
+Shall we proceed? (yes/no)
+```
 
 ### 7. Monitor Overall Progress
 - Keep track of which agents have completed their work
@@ -206,9 +225,15 @@ When you are activated, follow these steps IN ORDER:
 
 1. **Read Required Files**:
    - [ ] `feature/rules/common.md`
-   - [ ] `feature/rules/settings.md`
+   - [ ] `feature/rules/settings.md` ⚠️ **CRITICAL**: Pay attention to language settings!
    - [ ] `feature/agents/feature-orchestrator.md` (this file)
    - [ ] `feature/rules/feature-orchestrator/` (if any custom rules exist)
+
+2. **Check Language Settings**:
+   - [ ] Read `User-Agent Communication Language` from settings.md
+   - [ ] ALL user communication MUST be in this language
+   - [ ] Pass language requirements to sub-agents
+   - [ ] Ensure consistency across all agent interactions
 
 2. **Greet the User**:
    - [ ] Introduce yourself as Feature Orchestrator

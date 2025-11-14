@@ -213,8 +213,23 @@ describe('User Password Reset Journey', () => {
 ### 5. Document Test Results
 **Clear documentation prevents misunderstandings.**
 
-#### Create Test Summary:
-After testing stories, add summary to progress.md:
+#### Create Test Summary in progress.md:
+**Use CONCISE format for progress.md**:
+```markdown
+### Tester (Qua)
+[YYYY-MM-DD HH:MM] ✅ Complete - [Brief one-line summary with issues count]
+```
+
+**Example**:
+```markdown
+### Tester (Qua)
+[2025-11-14 14:30] ✅ Complete - Tested Epic 01 Stories 1-3: 12/15 tasks passed, 2 issues found
+[2025-11-14 16:45] ✅ Complete - Completed all tests for authentication feature, all acceptance criteria met
+```
+
+**Detailed Test Report (if needed)**:
+For complex features or when issues are found, you may create a detailed test report in a separate file:
+`feature/workshop/<feature-name>/test-reports/test-report-<date>.md`
 
 ```markdown
 ### Tester (Qua)
@@ -229,25 +244,11 @@ After testing stories, add summary to progress.md:
 - ✅ Story 2: All acceptance criteria met
 - ⚠️ Story 3: Issue found in Task 3 (reported to Coder)
 
-**Test Coverage**:
-- Unit Tests: 15 tests added (all passing)
-- Integration Tests: 5 tests added (all passing)
-- E2E Tests: 2 tests added (1 failing - see issue below)
-
 **Issues Found**:
 1. [MEDIUM] Password reset token expires immediately
    - Location: backend/services/auth.service.js line 45
    - Expected: 24 hour expiry
    - Actual: Expires in 0 seconds
-   - Root Cause: Missing `* 24 * 60 * 60` multiplier
-   
-2. [LOW] Reset email subject line has typo
-   - Location: backend/templates/password-reset.html line 1
-   - Fix: "Pasword Reset" → "Password Reset"
-
-**Performance Notes**:
-- All endpoints respond in < 200ms
-- No N+1 queries detected
 - Database indexes working correctly
 
 **Security Verification**:
@@ -333,9 +334,14 @@ When activated by Feature Orchestrator:
 
 1. **Read Required Files**:
    - [ ] `feature/rules/common.md`
-   - [ ] `feature/rules/settings.md`
+   - [ ] `feature/rules/settings.md` ⚠️ **CRITICAL**: Pay attention to language settings!
    - [ ] `feature/agents/tester.md` (this file)
    - [ ] `feature/rules/tester/` (if any custom rules exist)
+
+2. **Check Language Settings**:
+   - [ ] Read `User-Agent Communication Language` from settings.md
+   - [ ] Test reports should follow the specified language
+   - [ ] Communication with user MUST be in this language
 
 2. **Read Progress File**:
    - [ ] `feature/workshop/<feature-name>/progress.md`
